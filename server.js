@@ -16,8 +16,11 @@ app.use(morgan('dev'));
 
 //Development error-handling/debugging.
 app.use(errorhandler());
-
 app.use(cors());
+
+
+const apiRouter = require('./api/api');
+app.use('/api', apiRouter);
 
 
 app.listen(PORT, () => {
